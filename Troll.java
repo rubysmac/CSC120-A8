@@ -42,8 +42,9 @@ public class Troll implements Contract {
      * @param item the human
      */
     public void grab(String item) {
-        if (checkAsleep())
+        if (checkAsleep()) {
             return;
+        }
         try {
             if (inHand.contains(item)) {
                 System.out.println("This human is already in troll's hands");
@@ -140,7 +141,7 @@ public class Troll implements Contract {
      * 
      * @param x horizontal location to move to
      * @param y vertical location to move to
-     * @return
+     * @return false if the troll is asleep, true otherwise
      */
     public boolean fly(int x, int y) {
         if (checkAsleep())
